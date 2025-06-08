@@ -1,0 +1,52 @@
+{
+  "name": "n8n-nodes-telegram-polling-trigger",
+  "version": "1.0.0",
+  "description": "n8n node Telegram trigger",
+  "main": "index.js",
+  "author": "Ilushling",
+  "license": "MIT",
+  "homepage": "https://github.com/Ilushling/n8n-node-telegram-trigger#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ilushling/n8n-node-telegram-trigger.git"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "node",
+    "telegram",
+    "trigger",
+    "long",
+    "poll",
+    "polling"
+  ],
+  "bugs": {
+    "url": "https://github.com/Ilushling/n8n-node-telegram-trigger/issues"
+  },
+  "scripts": {
+    "build": "node_modules/typescript/bin/tsc && node_modules/gulp/bin/gulp.js build:icons",
+    "build:original": "tsc && gulp build:icons",
+    "lint": "node_modules/eslint/bin/eslint.js nodes credentials package.json",
+    "lintfix": "node_modules/eslint/bin/eslint.js nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/TelegramTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.17",
+    "eslint": "^9.28.0",
+    "gulp": "^5.0.1",
+    "typegram": "^5.2.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
